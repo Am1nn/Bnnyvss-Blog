@@ -35,11 +35,21 @@ async function fetchData() {
         //Title 2
         document.getElementById('title-2').innerHTML=post.Title;
 
-        document.getElementById('description').innerHTML=post.Description;
+        document.getElementById('description').innerText=post.Description;
 
         document.getElementById('code').innerText=post.Code;
+        if(post.Code=="")
+          {
+            document.getElementById('code-text').style.visibility='hidden'
+            document.getElementById('code').style.visibility='hidden'
+
+          }
 
         document.getElementById('code-description').innerHTML=post.CodeDescription
+        if(post.CodeDescription=="")
+        {
+          document.getElementById('code-description-text').style.visibility='hidden'
+        }
 
 
 

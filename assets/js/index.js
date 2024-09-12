@@ -25,7 +25,17 @@
                 <div class="meta mb-1">
                   <span class="date">Published ${post.PublisDate}</span>
                 </div>
-                <div class="intro">${post.Description}</div>
+                <div class="intro" style="
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-height: 4.5em;
+                line-height: 1.5em;
+            ">
+                ${post.Description}
+            </div>
                 <a class="text-link" href="/blog-post.html?id=${post.Id}"">Read more &rarr;</a>
               </div>
             </div>

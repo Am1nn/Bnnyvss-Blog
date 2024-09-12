@@ -36,7 +36,7 @@ async function fetchData() {
 
         document.getElementById('title-2').innerHTML=post.Title;
 
-        document.getElementById('description').innerText=post.Description;
+        document.getElementById('description').innerHTML=post.Description;
 
         document.getElementById('code').innerText=post.Code;
         if(post.Code=="")

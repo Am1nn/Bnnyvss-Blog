@@ -1,6 +1,6 @@
 
-/* ======= Highlight.js Plugin ======= */ 
-/* Ref: https://highlightjs.org/usage/ */ 
+/* ======= Highlight.js Plugin ======= */
+/* Ref: https://highlightjs.org/usage/ */
 document.addEventListener('DOMContentLoaded', (event) => {
   document.querySelectorAll('pre code').forEach((block) => {
     hljs.highlightBlock(block);
@@ -17,22 +17,23 @@ async function fetchData() {
 
     const postId = window.location.href.toString();
     const lastChar = postId.charAt(postId.length - 1);
-
+    var findPost = false;
 
     data.forEach(post => {
-      if(  post.Id==lastChar)
-      {
-
+      if (post.Id == lastChar) {
+        findPost = true;
         //Title
-        document.getElementById('title').innerHTML=post.Title;
+        document.getElementById('title').innerHTML = post.Title;
 
         //Publish Date
-        document.getElementById('publish-time').innerHTML=post.PublisDate;
+        document.getElementById('publish-time').innerHTML = post.PublisDate;
 
         //Category
-        document.getElementById('category').innerHTML=post.Category;
+        document.getElementById('category').innerHTML = post.Category;
 
         //Title 2
+        document.getElementById('title-2').innerHTML = post.Title;
+
         document.getElementById('title-2').innerHTML=post.Title;
 
         document.getElementById('description').innerText=post.Description;
@@ -50,15 +51,12 @@ async function fetchData() {
         {
           document.getElementById('code-description-text').style.visibility='hidden'
         }
-
-
-
-
-
       }
+    })
+    if (!findPost) {
+      window.location.href = '/404page.html';
     }
-    )
-  
+
   } catch (error) {
     console.error('Veri çekilirken hata oluştu:', error);
   }
